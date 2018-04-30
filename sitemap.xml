@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://avilapa.github.io/post/example2/</loc>
+    <lastmod>2015-03-02T16:08:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/post/example1/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/blog/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/event/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/example/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/post/</loc>
+    <lastmod>2015-03-02T16:08:29+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://avilapa.github.io/</loc>
+    <lastmod>2015-03-02T16:08:29+01:00</lastmod>
     <priority>0</priority>
   </url>
   
