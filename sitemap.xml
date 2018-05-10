@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://avilapa.github.io/post/example1/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://avilapa.github.io/fuel-renegades/</loc>
     <lastmod>2006-08-30T03:45:00+02:00</lastmod>
   </url>
@@ -27,25 +22,7 @@
   </url>
   
   <url>
-    <loc>https://avilapa.github.io/tags/blog/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://avilapa.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://avilapa.github.io/tags/event/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://avilapa.github.io/tags/example/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,7 +34,6 @@
   
   <url>
     <loc>https://avilapa.github.io/tags/</loc>
-    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
     <priority>0</priority>
   </url>
   
