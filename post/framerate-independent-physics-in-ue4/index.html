@@ -15,7 +15,7 @@
 
 
 <meta name="twitter:title" content="Framerate independent physics in UE4"/>
-<meta name="twitter:description" content="Achieving physics framerate independence in UE4 and how to correctly use substepping."/>
+<meta name="twitter:description" content="How to achieve physics framerate independence by correctly using UE4 substepping."/>
 <meta name="twitter:site" content="@ModularSouls"/>
 
 
@@ -29,7 +29,7 @@
     
 
     
-    <meta property="og:description" content="Achieving physics framerate independence in UE4 and how to correctly use substepping." />
+    <meta property="og:description" content="How to achieve physics framerate independence by correctly using UE4 substepping." />
   	<meta property="og:type" content="article" />
     <meta property="article:published_time" content="2014-07-11T10:54:24&#43;02:00" />
 
@@ -37,8 +37,6 @@
     <meta property="article:tag" content="fuel-renegades" />
     
     <meta property="article:tag" content="framerate" />
-    
-    <meta property="article:tag" content="independent" />
     
     <meta property="article:tag" content="physics" />
     
@@ -51,7 +49,7 @@
     <title>Framerate independent physics in UE4 &middot; Víctor Ávila</title>
 
     
-    <meta name="description" content="Achieving physics framerate independence in UE4 and how to correctly use substepping." />
+    <meta name="description" content="How to achieve physics framerate independence by correctly using UE4 substepping." />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -118,8 +116,8 @@
     },
     "headline": Framerate independent physics in UE4,
     "name": Framerate independent physics in UE4,
-    "wordCount": 705,
-    "timeRequired": "PT4M",
+    "wordCount": 1123,
+    "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -135,8 +133,8 @@
         "height": 1445
     },
     
-    "keywords": fuel-renegades, framerate, independent, physics, ue4, substepping,
-    "description": Achieving physics framerate independence in UE4 and how to correctly use substepping.,
+    "keywords": fuel-renegades, framerate, physics, ue4, substepping,
+    "description": How to achieve physics framerate independence by correctly using UE4 substepping.,
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": https://avilapa.github.io/post/framerate-independent-physics-in-ue4/
@@ -234,7 +232,7 @@
 
     <header class="post-header">
         <h1 class="post-title">Framerate independent physics in UE4</h1>
-        <small>Achieving physics framerate independence in UE4 and how to correctly use substepping.</small>
+        <small>How to achieve physics framerate independence by correctly using UE4 substepping.</small>
 
         <section class="post-meta">
         
@@ -246,8 +244,6 @@
           <span class="post-tag small"><a href="https://avilapa.github.io//tags/fuel-renegades/">#fuel-renegades</a></span>
          
           <span class="post-tag small"><a href="https://avilapa.github.io//tags/framerate/">#framerate</a></span>
-         
-          <span class="post-tag small"><a href="https://avilapa.github.io//tags/independent/">#independent</a></span>
          
           <span class="post-tag small"><a href="https://avilapa.github.io//tags/physics/">#physics</a></span>
          
@@ -325,17 +321,170 @@ You can enable substepping by ticking <i>Project Settings > Physics > Framerate 
 
 <h6 id="max-substep-delta-time">Max Substep Delta Time</h6>
 
-<p>This delta defines the time above which the physics engine will need to perform substeps. It will perform as much substeps as needed to reach 1 / max-substep-delta-time (1 / 0.008333 = 120fps in this case). You</p>
+<p align="justify">
+This delta defines the step time above which the physics engine will need to perform substeps. It will perform as many substeps as needed to reach <i>1 / max-substep-delta-time</i> (1 / 0.008333 = 120fps in this case). The following tables show some practical examples for a better understanding (bear in mind, this is the most important setting when it comes to defining the update loop):
+</p>
 
-<p>For example, in <a href="https://avilapa.github.io/fuel-renegades">Fuel Renegades</a>, we needed the physics to run at 120 fps (0.008333) in order for them to be as deterministic as possible</p>
+<p><b>Max Substep Delta = <code>1 / 120 (= 0.008333)</code>:</b></p>
+
+<table>
+<thead>
+<tr>
+<th>FPS</th>
+<th align="center">Substeps per <em>Tick()</em></th>
+<th align="right">Substep time</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>120</td>
+<td align="center">2</td>
+<td align="right">0.004167</td>
+<td>(1 / 120) 0.008333</td>
+</tr>
+
+<tr>
+<td>60</td>
+<td align="center">3</td>
+<td align="right">0.005556</td>
+<td>(1 / 60)  0.016668</td>
+</tr>
+
+<tr>
+<td>30</td>
+<td align="center">5</td>
+<td align="right">0.006667</td>
+<td>(1 / 30)  0.033335</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td align="center">9</td>
+<td align="right">0.007407</td>
+<td>(1 / 15)  0.066667</td>
+</tr>
+</tbody>
+</table>
+
+<p><b>Max Substep Delta = <code>1 / 60 (= 0.016667)</code>:</b></p>
+
+<table>
+<thead>
+<tr>
+<th>FPS</th>
+<th align="center">Substeps per <em>Tick()</em></th>
+<th align="right">Substep time</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>120</td>
+<td align="center">1</td>
+<td align="right">0.008333</td>
+<td>(1 / 120) 0.008333</td>
+</tr>
+
+<tr>
+<td>80</td>
+<td align="center">1</td>
+<td align="right">0.001250</td>
+<td>(1 / 80)  0.016668</td>
+</tr>
+
+<tr>
+<td>60</td>
+<td align="center">2</td>
+<td align="right">0.008333</td>
+<td>(1 / 60)  0.016668</td>
+</tr>
+
+<tr>
+<td>30</td>
+<td align="center">2</td>
+<td align="right">0.016668</td>
+<td>(1 / 30)  0.033335</td>
+</tr>
+</tbody>
+</table>
+
+<p><b>Max Substep Delta = <code>1 / 30 (= 0.033333)</code>:</b></p>
+
+<table>
+<thead>
+<tr>
+<th>FPS</th>
+<th align="center">Substeps per <em>Tick()</em></th>
+<th align="right">Substep time</th>
+<th>Total</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>120</td>
+<td align="center">1</td>
+<td align="right">0.008333</td>
+<td>(1 / 120) 0.008333</td>
+</tr>
+
+<tr>
+<td>60</td>
+<td align="center">1</td>
+<td align="right">0.016668</td>
+<td>(1 / 60)  0.016668</td>
+</tr>
+
+<tr>
+<td>30</td>
+<td align="center">2</td>
+<td align="right">0.016668</td>
+<td>(1 / 30)  0.033335</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td align="center">4</td>
+<td align="right">0.025001</td>
+<td>(1 / 10)  0.010004</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<blockquote>
+<p><small><i> Note: this numbers have been tested using command <b>~ t.MaxFPS</b>, so assume that instead of 120 fps, this results are for 119.99 fps, 59.99 fps instead of 60 fps, and so on.</i></small></p>
+</blockquote>
+</blockquote>
+
+<p align="justify">
+The results of the observation are rather obvious: <b>(1 / max-substep-delta-time) defines the max framerate at which our game should run.</b> Any lower framerates than the desired one will slow down the rendering, but not the physics, while higher framerates than the one defined by max substep delta time will result in an overall speed up to our game. 
+</p>
+
+<p align="justify">
+ In order to fix the time step to the physics desired rate, <b>you should not use a Fixed Framerate</b>. Instead, you should define the <b>Smoothed Frame Rate Range</b>, and set the max frame rate to the desired value. In the case of <a href="https://avilapa.github.io/fuel-renegades">Fuel Renegades</a>, we needed the physics to run at 120 fps (0.008333) in order for them to be as deterministic as possible, so we set the framerate settings like this:
+</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/substepping/fps.png" width="100%"/></p>
 
 <h6 id="max-substeps">Max Substeps</h6>
 
-<p>a</p>
+<p align="justify">
+Max substeps define the maximum subdivisions that the physics engine will be able to make to catch up with lower framerates. This makes sure that if the framerate drops too low (because of rendering) the CPU will not be overloaded by having too run too many physics steps. However, on those very low framerates physics will slow down.
+</p>
+
+<p align="justify">
+So you need to set the max substeps to the minimum framerate at which your game is considered <i>playable</i> or <i>enjoyable</i>. Be careful not to overextend this value, because it would cause a CPU slowdown!
+</p>
 
 <h4 id="setting-up-substepping-in-code">Setting up substepping in code</h4>
 
-<p>a</p>
+<p>When it comes to C++, your physics calculations cannot be performed in the <i>Tick()</i> as you used to do.</p>
+
+<p>You will need to define a <i>SubstepTick()</i>&hellip;. TO BE CONTINUED.</p>
 
 <h4 id="handling-substep-physics">Handling substep physics</h4>
 

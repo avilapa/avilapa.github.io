@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Framerate independent physics in UE4</title>
+      <link>https://avilapa.github.io/post/framerate-independent-physics-in-ue4/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://avilapa.github.io/post/framerate-independent-physics-in-ue4/</guid>
+      <description>If you are building a physics based game/application and you have plans of it running in a wide range of computers, you need to fix your physics timestep. Index  Understanding the problem Solving the problem  Configuring substepping Setting up substepping in code Handling substep physics   Understanding the problem Your game may be running fine at 120 fps in your computer, but lower-end computers out there waiting for your game to come out may not be able to even reach 60 fps.</description>
+    </item>
+    
+    <item>
       <title>Fuel Renegades</title>
       <link>https://avilapa.github.io/fuel-renegades/</link>
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
