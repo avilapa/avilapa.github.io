@@ -9,37 +9,37 @@
     
         
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="/images/cover-fuel-renegades.png"/>
+        <meta name="twitter:image" content="/images/cover-render-engine.png"/>
     
 
 
 
-<meta name="twitter:title" content="Fuel Renegades"/>
-<meta name="twitter:description" content="An UE4 racing multiplayer game developed by the student group Modular Souls."/>
+<meta name="twitter:title" content="Custom OpenGL C&#43;&#43; Engine"/>
+<meta name="twitter:description" content="Rendering engine for HND final year&#39;s graphics programming subject."/>
 <meta name="twitter:site" content="@ModularSouls"/>
 
 
 
-  	<meta property="og:title" content="Fuel Renegades &middot; Víctor Ávila" />
+  	<meta property="og:title" content="Custom OpenGL C&#43;&#43; Engine &middot; Víctor Ávila" />
   	<meta property="og:site_name" content="Víctor Ávila" />
-  	<meta property="og:url" content="https://avilapa.github.io/fuel-renegades/" />
+  	<meta property="og:url" content="https://avilapa.github.io/render-engine/" />
 
     
-       <meta property="og:image" content="/images/cover-fuel-renegades.png"/>
+       <meta property="og:image" content="/images/cover-render-engine.png"/>
     
 
     
-    <meta property="og:description" content="An UE4 racing multiplayer game developed by the student group Modular Souls." />
+    <meta property="og:description" content="Rendering engine for HND final year&#39;s graphics programming subject." />
   	<meta property="og:type" content="article" />
     <meta property="article:published_time" content="2006-08-30T03:45:00&#43;02:00" />
 
     
     
 
-    <title>Fuel Renegades &middot; Víctor Ávila</title>
+    <title>Custom OpenGL C&#43;&#43; Engine &middot; Víctor Ávila</title>
 
     
-    <meta name="description" content="An UE4 racing multiplayer game developed by the student group Modular Souls." />
+    <meta name="description" content="Rendering engine for HND final year&#39;s graphics programming subject." />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +65,7 @@
     
     <meta name="generator" content="Hugo 0.40.1" />
 
-    <link rel="canonical" href="https://avilapa.github.io/fuel-renegades/" />
+    <link rel="canonical" href="https://avilapa.github.io/render-engine/" />
 
     
       
@@ -104,30 +104,30 @@
         "description": Videogames programming student and enthusiast
         
     },
-    "headline": Fuel Renegades,
-    "name": Fuel Renegades,
-    "wordCount": 23,
+    "headline": Custom OpenGL C&#43;&#43; Engine,
+    "name": Custom OpenGL C&#43;&#43; Engine,
+    "wordCount": 138,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": https://avilapa.github.io/fuel-renegades/,
+    "url": https://avilapa.github.io/render-engine/,
     "datePublished": 2006-08-30T03:45Z,
     "dateModified": 2006-08-30T03:45Z,
     
     "image": {
         "@type": "ImageObject",
-        "url": https://avilapa.github.io/images/cover-fuel-renegades.png,
+        "url": https://avilapa.github.io/images/cover-render-engine.png,
         "width": 3000,
         "height": 1445
     },
     
     
-    "description": An UE4 racing multiplayer game developed by the student group Modular Souls.,
+    "description": Rendering engine for HND final year&#39;s graphics programming subject.,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://avilapa.github.io/fuel-renegades/
+        "@id": https://avilapa.github.io/render-engine/
     }
 }
     </script>
@@ -198,7 +198,7 @@
 
 
   
-  <header class="main-header post-head" style="background-image: url(/images/cover-fuel-renegades.png)">
+  <header class="main-header post-head" style="background-image: url(/images/cover-render-engine.png)">
   
   <nav class="main-nav overlay clearfix">
 
@@ -214,10 +214,10 @@
 
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">Fuel Renegades</h1>
+            <h1 class="page-title">Custom OpenGL C&#43;&#43; Engine</h1>
             <h2 class="page-description">
                 
-                    An UE4 racing multiplayer game developed by the student group Modular Souls.
+                    Rendering engine for HND final year&#39;s graphics programming subject.
                 
             </h2>
         </div>
@@ -248,16 +248,57 @@
 
 
 
-<p><img src="https://avilapa.github.io/images/fuelrenegades.jpg" alt="Fuel Renegades Logo" /></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J9CExYF8yrU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<h3 id="the-engine">The Engine</h3>
+
+<p>This is an <strong>OpenGL</strong> and <strong>C++</strong> rendering engine I made in my final HND year at ESAT Valencia for the graphics programming subject. Its main features are the following:</p>
+
+<ul>
+<li>Multithreaded agnostical graphics API</li>
+<li>Component oriented engine</li>
+<li>Physically Based Rendering techniques:
+
+<ul>
+<li>Material pipeline (PBS, Metallic/Roughness workflow)</li>
+<li>Image Based Lighting (Radiance and Irradiance environment mapping)</li>
+<li>Atmospheric Scattering (Rayleigh and Mie Scattering)</li>
+</ul></li>
+<li>GLTF model loading</li>
+<li>Postprocessing Pipeline:
+
+<ul>
+<li>Screen Space Ambient Occlusion (SSAO)</li>
+<li>Bloom</li>
+<li>Light Scattering (God Rays)</li>
+<li>Shadow Mapping</li>
+<li>Fast Approximate Anti-Aliasing (FXAA)</li>
+<li>Lens Distortion (with Grain, Vignette, Color Aberration)</li>
+<li>Tonemapping and multiple one-pass filters</li>
+</ul></li>
+<li>Procedural generation of infinite voxel worlds</li>
+<li>UI integration (ImGui)</li>
+<li>Sound integration (OpenAL)</li>
+<li>Physics integration (Bullet Physics)</li>
+</ul>
 
 <h3 id="blog-posts">Blog posts</h3>
 
 <hr />
 
 <blockquote>
-<h3 id="framerate-independent-physics-in-ue4-1"><a href="https://avilapa.github.io/post/coming-soon/">Framerate independent physics in UE4</a></h3>
+<h3 id="custom-engine-physically-based-rendering-1"><a href="https://avilapa.github.io/post/coming-soon/">Custom Engine: Physically Based Rendering</a></h3>
 
-<p>How to achieve physics framerate independence in UE4 and how to correctly use substepping.
+<p>The physically based approach used for my custom rendering engine.
+  <br><small><b>Víctor Ávila</b></small></p>
+</blockquote>
+
+<p></p>
+
+<blockquote>
+<h3 id="custom-engine-postprocessing-2"><a href="https://avilapa.github.io/post/coming-soon/">Custom Engine: Postprocessing</a></h3>
+
+<p>My custom engine&rsquo;s postprocessing.
   <br><small><b>Víctor Ávila</b></small></p>
 </blockquote>
 
@@ -325,19 +366,19 @@
     
 <section class="share">
   <h4>Share this page</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Fuel%20Renegades&nbsp;-&nbsp;V%c3%adctor%20%c3%81vila&amp;url=https%3a%2f%2favilapa.github.io%2ffuel-renegades%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Custom%20OpenGL%20C%2b%2b%20Engine&nbsp;-&nbsp;V%c3%adctor%20%c3%81vila&amp;url=https%3a%2f%2favilapa.github.io%2frender-engine%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2favilapa.github.io%2ffuel-renegades%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2favilapa.github.io%2frender-engine%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2favilapa.github.io%2ffuel-renegades%2f&amp;description=Fuel%20Renegades"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2favilapa.github.io%2frender-engine%2f&amp;description=Custom%20OpenGL%20C%2b%2b%20Engine"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2favilapa.github.io%2ffuel-renegades%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2favilapa.github.io%2frender-engine%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -354,8 +395,8 @@
 
 
 var disqus_config = function () {
-this.page.url = "https:\/\/avilapa.github.io\/fuel-renegades\/";  
-this.page.identifier = "https:\/\/avilapa.github.io\/fuel-renegades\/"; 
+this.page.url = "https:\/\/avilapa.github.io\/render-engine\/";  
+this.page.identifier = "https:\/\/avilapa.github.io\/render-engine\/"; 
 };
 
 (function() { 
