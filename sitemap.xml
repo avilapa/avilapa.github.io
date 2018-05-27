@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/post/custom-engine-postprocessing/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/render-engine/</loc>
     <lastmod>2006-08-30T03:45:00+02:00</lastmod>
   </url>
@@ -23,6 +28,12 @@
   
   <url>
     <loc>https://avilapa.github.io/tags/atmospheric-scattering/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/bloom/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -45,6 +56,18 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/fxaa/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/lens-distortion/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/opengl/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -57,7 +80,19 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/postprocessing/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/post/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/ssao/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

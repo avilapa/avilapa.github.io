@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lens Distortion on Víctor Ávila</title>
+    <link>https://avilapa.github.io/tags/lens-distortion/</link>
+    <description>Recent content in Lens Distortion on Víctor Ávila</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - 2018</copyright>
+    <lastBuildDate>Sun, 27 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://avilapa.github.io/tags/lens-distortion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom Engine: Postprocessing</title>
+      <link>https://avilapa.github.io/post/custom-engine-postprocessing/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://avilapa.github.io/post/custom-engine-postprocessing/</guid>
+      <description>The postprocessing pipeline and some of its postprocessing effects in my custom rendering engine.</description>
+    </item>
+    
+  </channel>
+</rss>
