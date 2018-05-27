@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://avilapa.github.io/post/custom-engine-pbr/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/render-engine/</loc>
     <lastmod>2006-08-30T03:45:00+02:00</lastmod>
   </url>
@@ -17,18 +22,55 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/atmospheric-scattering/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/c&#43;&#43;/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/custom-engine/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/opengl/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/pbr/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/post/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/</loc>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://avilapa.github.io/</loc>
-    <lastmod>2006-08-30T03:45:00+02:00</lastmod>
+    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

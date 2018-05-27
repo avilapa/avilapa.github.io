@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/content/images/2018/may/engine-pbr/pbr.png"/>
+    
+
+
+
+<meta name="twitter:title" content="Custom Engine: Physically Based Rendering"/>
+<meta name="twitter:description" content="The physically based approach used for my custom rendering engine."/>
+<meta name="twitter:site" content="@ModularSouls"/>
+
+
+
+  	<meta property="og:title" content="Custom Engine: Physically Based Rendering &middot; Víctor Ávila" />
+  	<meta property="og:site_name" content="Víctor Ávila" />
+  	<meta property="og:url" content="https://avilapa.github.io/post/custom-engine-pbr/" />
+
+    
+       <meta property="og:image" content="/content/images/2018/may/engine-pbr/pbr.png"/>
+    
+
+    
+    <meta property="og:description" content="The physically based approach used for my custom rendering engine." />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-05-27T00:00:00Z" />
+
+    
+    <meta property="article:tag" content="custom-engine" />
+    
+    <meta property="article:tag" content="pbr" />
+    
+    <meta property="article:tag" content="opengl" />
+    
+    <meta property="article:tag" content="c&#43;&#43;" />
+    
+    <meta property="article:tag" content="atmospheric-scattering" />
+    
+    
+
+    <title>Custom Engine: Physically Based Rendering &middot; Víctor Ávila</title>
+
+    
+    <meta name="description" content="The physically based approach used for my custom rendering engine." />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://avilapa.github.io/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://avilapa.github.io/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://avilapa.github.io/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://avilapa.github.io/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/vs.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+        <link href="http://feeds.feedburner.com/..." rel="alternate" type="application/rss+xml" title="Víctor Ávila" />
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+
+    <link rel="canonical" href="https://avilapa.github.io/post/custom-engine-pbr/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": https://avilapa.github.io/images/logo-large.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": https://avilapa.github.io/images/logo-large.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://avilapa.github.io,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Videogames programming student and enthusiast
+        
+    },
+    "headline": Custom Engine: Physically Based Rendering,
+    "name": Custom Engine: Physically Based Rendering,
+    "wordCount": 1351,
+    "timeRequired": "PT7M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": https://avilapa.github.io/post/custom-engine-pbr/,
+    "datePublished": 2018-05-27T00:00Z,
+    "dateModified": 2018-05-27T00:00Z,
+    
+    "image": {
+        "@type": "ImageObject",
+        "url": https://avilapa.github.io//content/images/2018/may/engine-pbr/pbr.png,
+        "width": 3000,
+        "height": 1445
+    },
+    
+    "keywords": custom-engine, pbr, opengl, c++, atmospheric-scattering,
+    "description": The physically based approach used for my custom rendering engine.,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://avilapa.github.io/post/custom-engine-pbr/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-118883750-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            <h3>avilapa</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/">Blog</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/about/">About me</a>
+            </li>
+        
+            <h3>Projects</h3>
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/fuel-renegades">Fuel Renegades</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/render-engine">Custom Engine</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/...">Subscribe</a> </div>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+  
+  <header class="main-header post-head" style="background-image: url(/content/images/2018/may/engine-pbr/pbr.png)">
+  
+  <nav class="main-nav overlay clearfix">
+
+
+  
+      <a class="blog-logo" href="https://avilapa.github.io/"><img src="https://avilapa.github.io/images/logo-large.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Custom Engine: Physically Based Rendering</h1>
+        <small>The physically based approach used for my custom rendering engine.</small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-05-27T00:00:00Z">
+            May 27, 2018
+          </time>
+        
+         
+          <span class="post-tag small"><a href="https://avilapa.github.io//tags/custom-engine/">#custom-engine</a></span>
+         
+          <span class="post-tag small"><a href="https://avilapa.github.io//tags/pbr/">#pbr</a></span>
+         
+          <span class="post-tag small"><a href="https://avilapa.github.io//tags/opengl/">#opengl</a></span>
+         
+          <span class="post-tag small"><a href="https://avilapa.github.io//tags/c&#43;&#43;/">#c&#43;&#43;</a></span>
+         
+          <span class="post-tag small"><a href="https://avilapa.github.io//tags/atmospheric-scattering/">#atmospheric-scattering</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p><br></p>
+
+<h3 id="index">Index</h3>
+
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#physically-based-rendering">Physically Based Rendering</a>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#physically-based-shading">Physically Based Shading</a></li>
+<li><a href="#image-based-lighting">Image Based Lighting</a></li>
+<li><a href="#merging">Merging</a></li>
+</ul></li>
+<li><a href="#atmospheric-scattering">Atmospheric Scattering</a>
+
+<ul>
+<li><a href="#rayleigh-scattering">Rayleigh Scattering</a></li>
+<li><a href="#mie-scattering">Mie Scattering</a></li>
+<li><a href="#phase-functions">Phase Functions</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="background">Background</h2>
+
+<p align="justify">
+<b>Physically Based Rendering</b> is not a technique, but a collection of graphics techniques aiming to achieve results as close as possible to the <b>physical world</b>. This means that this techniques are highly based on real world physics light behaviour formulas. However, in order for this techiniques to be plausible to be rendered in real-time, some approximations need to be made (that is where the "based" in PBR comes from!).
+</p>
+
+<p align="justify">
+In this post I will talk about what in the PBR techniques I implemented in my <a href="https://avilapa.github.io/render-engine">Custom Engine</a> (<b>physically based shading</b>, <b>image based lighting</b>, and <b>atmospheric scattering</b>) and what I learned while doing it. Lets go!
+</p>
+
+<h2 id="physically-based-rendering">Physically Based Rendering</h2>
+
+<h4 id="introduction">Introduction</h4>
+
+<p align="justify">
+My implementation is highly based on <a href="https://learnopengl.com/PBR/Lighting">this tutorial</a>. Its basis are the following:
+</p>
+
+<ul>
+<li><p align="justify"> <b>Be based on the microfacet surface model</b>: this theory describes how at a microscopic level, all surfaces have a certain degree of roughness which will scatter light rays in a more or less chaotic way, depending on this roughness degree.
+</p></li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/microfacets.png"/></p>
+
+<ul>
+<li><p align="justify"> <b>Be energy conserving</b>: This means that light leaving a surface, can never be brighter than the light that fell upon it; so the sum of the diffuse and reflected light cannot be bigger than the received light. As you can see in the image, as the surface gets smoother, the light reflected takes over the diffuse color of the sphere.
+</p></li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/energy-conservation.jpg" width ="100%"/></p>
+
+<ul>
+<li><p align="justify"> <b>Use a physically based BRDF</b>: The bidirectional reflectance distribution function used in this case is the Cook-Torrance BRDF. It is a function that models light behaviour in two different ways, making a difference between diffuse and specular reflection. This defines the way that light is reflected on the different surface models, and how the viewer sees the object.</li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/brdf.png" /></p>
+
+<p>In the end, we get the Cook-Torrance <b>reflectance equation</b>, a more specialized version of the <a href="https://en.wikipedia.org/wiki/Rendering_equation">rendering equation</a>.</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/reflectance.png"/>
+</p></p>
+
+<h4 id="physically-based-shading">Physically Based Shading</h4>
+
+<p align="justify">
+I will not go into detail on how the reflectance function is translated into code, as the author of <a href="https://learnopengl.com/PBR/Lighting">the post</a> does a great job at explaining this. Once this functions are in the shader, computation for directional, point and spot lights is done in the shader, with the addition of the different light properties such as intensity/attenuation, ambient factor, color, cone angle in case of spot lights, and calculate the resulting light output keeping in mind the energy conservation rule.
+</p>
+
+<pre><code>refractedLight = 1.0 - reflectedLight
+</code></pre>
+
+<p align="justify">
+Now the lighting just needs the shadows to be applied to it, if any. Doing this is as simple as getting the resulting factor of shadow calculation and multiplying it by the output light.
+</p>
+
+<p align="justify">
+This process is repeated for each light object, and summed to the final output value (as light is additive).
+</p>
+
+<h4 id="image-based-lighting">Image Based Lighting</h4>
+
+<p align="justify">
+For the IBL part, three preprocess passes are performed at the beggining of the application, in order to achieve the textures needed for the environment lighting of the PBR materials:
+</p>
+
+<ul>
+<li><p align="justify"> <b>Diffuse Irradiance</b>: This process maps to a cube a blurred version of the environment cubemap, by convoluting each sample direction of the cubemap, and accumulating all other sample directions over a hemisphere, representing the sum of all indirect diffuse light of the scene hitting some surface with a certain normal direction. This texture result is known as irradiance map.</li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/irradiance.png"/>
+</p></p>
+
+<ul>
+<li><p align="justify"> <b>Pre-filtered environment map</b>: This process is similar to the diffuse irradiance, but taking in roughness into account. Multiple level-of-detail cubemaps are convoluted, with more scattered sample vectors at each level (creating a blurrier result).</li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/prefilter.png"/>
+</p></p>
+
+<ul>
+<li><p align="justify"> <b>BRDF</b>: The final bit that needs to be done is calculating the BRDF and mapping it to a lookup texture. Red represents a scale value, and green represents a bias value to the surface&rsquo;s Fresnel<sup>1</sup>, while the horizontal and vertical texture coordinates represent the BRDF&rsquo;s input <i>n ⋅ ω<sub>i</sub></i> value and the input roughness value, respectively.</li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/brdf_lut.png"/>
+</p></p>
+
+<blockquote>
+<blockquote>
+<p>Fresnel refers to the reflectivity occuring at different angles. Light landing on a surface at a grazing angle will be much more likely to reflect than that which hits a surface dead-on.</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/fresnel.png", width="90%"/>
+</p>
+</blockquote>
+</blockquote>
+
+<h4 id="merging">Merging</h4>
+
+<p align="justify">
+In order to merge all this information into the final output color value, we need to calculate each part's contribution to it and add them together. The ambient factor is calculated as follows:
+</p>
+
+<pre><code>vec3 ambient = (kD * diffuse + specular) * ao_factor;
+</code></pre>
+
+<p align="justify">
+Being <i>kD</i> the refraction ratio, <i>diffuse</i> the irradiance multiplied by the albedo texture at that pixel, <i>specular</i> the prefiltered map value multiplied by the BRDF-LUT value, all based on roughness, and <i>ao_factor</i> the ambient occlusion value of the object at that pixel.
+</p>
+
+<p align="justify">
+All that is left to do is to apply the high dynamic range (HDR) tonemapping, and gamma correction to the final output.
+
+<img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/tex_spheres.png" width="120%"/>
+</p>
+
+<h2 id="atmospheric-scattering">Atmospheric Scattering</h2>
+
+<p align="justify">
+Even though this may seem like a completely unrelated topic, it really isn't. This technique <b>simulates the color of the sky based on physically based light scattering equations</b>. In order for this technique to be light-weight in performance, some simplification has to be done. In this case, the implementation assumes a single ray pointed to the viewers eye to simulate the light. 
+</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/atmospheric_scattering_small.png" width="120%"/></p>
+
+<h6 id="single-scattering">Single Scattering</h6>
+
+<p align="justify">
+This form of ray tracing is called <b>Single Scattering</b>. It means that a single ray of light can be deflected many times, so that light can travel very complex paths when colliding with molecules before reaching the camera. There are two ways in which this molecules can affect our vision:
+</p>
+
+<ul>
+<li><p align="justify"><b>Out-Scattering</b>: happens when light is travelling towards the camera, and gets deflected by a collision with a particle. This is heavily affected by the distance that light has to travel. Distance makes the light to become progressively dimmer.
+</p></li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/out_scattering.png"/></p>
+
+<ul>
+<li><p align="justify"><b>In-Scattering</b>: happens when light is travelling in a direction, and gets deflected by a collision with a particle, which redirects it towards the camera. This allows us to see light sources that are not in the cameras direct light of sight, which causes halos around light sources.
+</p></li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/in_scattering.png"/></p>
+
+<p><br>
+<p align="justify">
+Two of the most common forms of scattering in the atmosphere are <b><i>Rayleigh scattering</i></b> and <b><i>Mie scattering</i></b>.
+</p></p>
+
+<h4 id="rayleigh-scattering">Rayleigh Scattering</h4>
+
+<p align="justify">
+Rayleigh scattering is the reason why we see the sky blue from the surface of the earth; it is caused by rays colliding with small particules in the air, which causes shorter light wavelengths to collide more frequently with them, scattering blue and violet<sup>2</sup> light along the sky, which bounces everywhere and makes the sky appear blue; however at sunset, the light has to travel through a lot more space so by the time it reaches our eye, all the blue and violet light is scattered away, leaving us only with the reddish light, making the sky appear orange and red.
+
+<img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/rayleigh.png" width="100%"/>
+</p>
+
+<blockquote>
+<blockquote>
+<p align="justify">
+<b>2: Why is the sky blue and not violet?</b> TL;DR, even though violet light wavelength is shorter than blue, the Sun sends many less violet rays than blue rays, so the sky appears tinted in blue! </p>
+
+<p align="justify">Also, apart from this, the human eye has three types of cones to identify light color (red, green and blue). Blue cones, are most sensitive at blue wavelengths, but they drop sensitivity dramatically at violet wavelengths.
+</p>
+</blockquote>
+</blockquote>
+
+<h4 id="mie-scattering">Mie Scattering</h4>
+
+<p align="justify">
+Mie scattering on the other side tends to scatter all wavelengths of light equally, as it refers to the collision with bigger particles (such as pollution and dust in the sky). It makes the sky look greyish and causes the sun to have a large white halo around it.
+
+<img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/mie_engine.png"/>
+</p>
+
+<h4 id="phase-functions">Phase functions</h4>
+
+<p align="justify">
+The phase function describes how much light is scattered towards the diraction of the acamara based on the angle and a constant <i>g</i> that affects the symmetry of the scattering. This is one adaptation of the full function:
+</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/phase.jpg", width="70%"/></p>
+
+<p align="justify">
+However, for the sake of making this more lightweight, a huge level of simplification is applied to the function. The resulting equations used in the implementation are the following (for rayleigh and mie respectively):
+</p>
+
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/phases.png", width="90%"/></p>
+
+<p><p align="justify">
+Finally, the result of this functions is computed per pixel and drawn onto a cubemap. In the engine you can modify some parameters to describe different colors in the sky. You can see me playing with some values in the demo video (second 1:25):</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J9CExYF8yrU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><a href="https://learnopengl.com/PBR/Theory">https://learnopengl.com/PBR/Theory</a></li>
+<li><a href="https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/">https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/</a></li>
+<li><a href="https://www.alanzucconi.com/2017/10/10/atmospheric-scattering-1/">https://www.alanzucconi.com/2017/10/10/atmospheric-scattering-1/</a></li>
+<li><a href="https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html">https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html</a></li>
+</ul>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://avilapa.github.io/" style="background-image: url(/images/logo-large.png)"><span class="hidden">Víctor Ávila Parcet's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://avilapa.github.io/">Víctor Ávila Parcet</a></h4>
+  
+  <p>Videogames programming student and enthusiast</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Valencia, Spain</span>
+    <span class="author-link icon-link"><a href="http://avilapa.github.io">http://avilapa.github.io</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Custom%20Engine%3a%20Physically%20Based%20Rendering&nbsp;-&nbsp;V%c3%adctor%20%c3%81vila&amp;url=https%3a%2f%2favilapa.github.io%2fpost%2fcustom-engine-pbr%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2favilapa.github.io%2fpost%2fcustom-engine-pbr%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2favilapa.github.io%2fpost%2fcustom-engine-pbr%2f&amp;description=Custom%20Engine%3a%20Physically%20Based%20Rendering"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2favilapa.github.io%2fpost%2fcustom-engine-pbr%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "https:\/\/avilapa.github.io\/post\/custom-engine-pbr\/";  
+this.page.identifier = "https:\/\/avilapa.github.io\/post\/custom-engine-pbr\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://avilapa.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Víctor Ávila</a> All rights reserved - 2018</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://avilapa.github.io/js/jquery.js"></script>
+    <script type="text/javascript" src="https://avilapa.github.io/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://avilapa.github.io/js/index.js"></script>
+    
+</body>
+</html>
+
