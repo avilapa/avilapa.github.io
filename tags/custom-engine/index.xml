@@ -27,7 +27,8 @@
       <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://avilapa.github.io/post/custom-engine-postprocessing/</guid>
-      <description>The postprocessing pipeline and some of its postprocessing effects in my custom rendering engine.</description>
+      <description>Index  Postprocessing Pipeline Postprocessing Effects  SSAO Bloom God Rays  References  Postprocessing Pipeline The goal of the pipeline was to make an API that is really easy to use for the users, and that requieres as little graphics knowledge as possible. The result, is as simple as the following: ref_ptr&amp;lt;Composer&amp;gt; cam_composer = Engine::ref().scene()-&amp;gt;camera()-&amp;gt;composer(); cam_composer-&amp;gt;set_shadow_mapping_enabled(true); cam_composer-&amp;gt;addPostprocessSSAO()-&amp;gt;addPostprocessBloom()-&amp;gt;addPostprocessFXAA();  This API makes some assumptions:
+ The user will not create new postprocessing effects, they will just be able to compose the scene and tweak each render passes parameters.</description>
     </item>
     
   </channel>

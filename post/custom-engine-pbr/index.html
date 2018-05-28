@@ -116,7 +116,7 @@
     },
     "headline": Custom Engine: Physically Based Rendering,
     "name": Custom Engine: Physically Based Rendering,
-    "wordCount": 1349,
+    "wordCount": 1359,
     "timeRequired": "PT7M",
     "inLanguage": {
       "@type": "Language",
@@ -296,7 +296,7 @@ In this post I will talk about the PBR techniques I implemented in my <a href="h
 <h4 id="introduction">Introduction</h4>
 
 <p align="justify">
-My implementation is highly based on <a href="https://learnopengl.com/PBR/Lighting">this tutorial</a>. Its basis are the following:
+My implementation is highly based on <a href="https://learnopengl.com/PBR/Lighting" target="_blank">this tutorial</a>. Its basis are the following:
 </p>
 
 <ul>
@@ -319,7 +319,7 @@ My implementation is highly based on <a href="https://learnopengl.com/PBR/Lighti
 
 <p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/brdf.png" /></p>
 
-<p>In the end, we get the Cook-Torrance <b>reflectance equation</b>, a more specialized version of the <a href="https://en.wikipedia.org/wiki/Rendering_equation">rendering equation</a>.</p>
+<p>In the end, we get the Cook-Torrance <b>reflectance equation</b>, a more specialized version of the <a href="https://en.wikipedia.org/wiki/Rendering_equation" target="_blank">rendering equation</a>.</p>
 
 <p><img src="https://avilapa.github.io/content/images/2018/may/engine-pbr/reflectance.png"/>
 </p></p>
@@ -327,7 +327,7 @@ My implementation is highly based on <a href="https://learnopengl.com/PBR/Lighti
 <h4 id="physically-based-shading">Physically Based Shading</h4>
 
 <p align="justify">
-I will not go into detail on how the reflectance function is translated into code, as the author of <a href="https://learnopengl.com/PBR/Lighting">the post</a> does a great job at explaining this. Once this functions are in the shader, computation for directional, point and spot lights is done in the shader, with the addition of the different light properties such as intensity/attenuation, ambient factor, color, cone angle in case of spot lights, and calculate the resulting light output keeping in mind the energy conservation rule.
+I will not go into detail on how the reflectance function is translated into code, as the author of <a href="https://learnopengl.com/PBR/Lighting" target="_blank">the post</a> does a great job at explaining this. Once this functions are in the shader, computation for directional, point and spot lights is done in the shader, with the addition of the different light properties such as intensity/attenuation, ambient factor, color, cone angle in case of spot lights, and calculate the resulting light output keeping in mind the energy conservation rule.
 </p>
 
 <pre><code>refractedLight = 1.0 - reflectedLight
@@ -477,10 +477,10 @@ Finally, the result of this functions is computed per pixel and drawn onto a cub
 <h2 id="references">References</h2>
 
 <ul>
-<li><a href="https://learnopengl.com/PBR/Theory">https://learnopengl.com/PBR/Theory</a></li>
-<li><a href="https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/">https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/</a></li>
-<li><a href="https://www.alanzucconi.com/2017/10/10/atmospheric-scattering-1/">https://www.alanzucconi.com/2017/10/10/atmospheric-scattering-1/</a></li>
-<li><a href="https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html">https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html</a></li>
+<li><a href="https://learnopengl.com/PBR/Theory" target="_blank">LearnOpenGL PBR Theory</a></li>
+<li><a href="https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/" target="_blank">Marmoset PBR Guide</a></li>
+<li><a href="https://www.alanzucconi.com/2017/10/10/atmospheric-scattering-1/" target="_blank">Alan Zucconi Atmospheric Scattering</a></li>
+<li><a href="https://developer.nvidia.com/gpugems/GPUGems2/gpugems2_chapter16.html" target="_blank">GPU Gems: Atmospheric Scattering</a></li>
 </ul>
 
     </section>
