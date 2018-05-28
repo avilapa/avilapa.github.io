@@ -122,8 +122,8 @@
     },
     "headline": Custom Engine: Postprocessing,
     "name": Custom Engine: Postprocessing,
-    "wordCount": 444,
-    "timeRequired": "PT3M",
+    "wordCount": 1050,
+    "timeRequired": "PT5M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -310,10 +310,6 @@ However, the composer class could of course be overriden to create a faster and 
 </p>
 
 <p align="justify">
-In an ideal world (like the one in Unity3D or UE4), the composer would be smart enough to recognize the amount of postprocessing effects it has to perform, and understand when can it reuse a render pass. But this would have consumed time I rathered invert in other stuff!
-</p>
-
-<p align="justify">
 But the user does have some degree of control when it comes to sort of composing their own passes. Each <i>addPass()</i> call receives two optional parameters, an input texture, and a pointer to an output texture. This way, the user could compose a complex pass like this example, composing god rays:
 </p>
 
@@ -338,17 +334,95 @@ This example may seem kind of lame, but it has been core to being able to easily
 
 <h4 id="ssao">SSAO</h4>
 
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-postprocessing/ssao.png", width="100%"/></p>
+
 <p align="justify">
+<b>Screen Space Ambient Occlusion</b> consists in darkening the surface of an object, based on how occluded it is by the surrounding geometry or, to put it in another words, how accessible the light is to a specific point. Ambient occlusion hugely improves the visual quality of a scene at a relatively low cost.
 </p>
+
+<p><small><i>Same image with (left) and without (right) the ambient occlusion:</i></small>
+<img src="https://avilapa.github.io/content/images/2018/may/engine-postprocessing/ssao_comparison.png", width="100%"/></p>
+
+<blockquote>
+<blockquote>
+<p><b>Having trouble to see the difference?</b> It is hard to see the effect if you are not familiar with its results. Look at the edges of the helmet and you will see a dark contour that gives it a sense of depth (it is specially visible behind the helmet!)</p>
+</blockquote>
+</blockquote>
+
+<h6 id="implementation">Implementation</h6>
+
+<p align="justify">
+This implementation is based on the John Chapman's <b>normal oriented hemisphere</b> method. It consists in sampling points on an hemisphere oriented along the surface normal of a pixel in order to check the depths of the surroundings and calculating the occlusion based on this factors.
+</p>
+
+<p align="justify">
+<b>1.</b> The SSAO step requires the position and normals in viewspace in advance, in order to sample depths of the surrounding pixels, so a <i>pre-pass</i> is performed in advance<sup>1</sup>.
+</p>
+
+<blockquote>
+<blockquote>
+<p><b>1:</b> This step could be avoided by reconstructing positions from depth!</p>
+</blockquote>
+</blockquote>
+
+<p align="justify">
+<b>2.</b> The next pass is where the magic happens. Apart from this two textures we will need to create a sample kernel of vectors which will serve as the points in the hemisphere. In order to make it more accurate, after the points are calculated they use an accelerating interpolation function to make them closer to the center of the hemisphere. In order to randomly rotate the sample kernel a small random texture is also passed as input to the shader.
+</p>
+<p align="justify">
+Once in the shader we iterate through each sample vector accumulating the occlusion value, and translate it from tangent-space to view-space by using a <i>tangent-bitangent-normal</i> matrix. Then we need to take a sample of the depth and compare it against the sample depth; in this step, we perform a range check in order to make sure that we are not counting as occlusion a too far away  of the actual object. We achieve this by zeroing any contribution from outside the hemisphere radius. Apart from the range check, we add a <i>bias</i> parameter to the comparison in order to avoid acne-like artifacts. 
+</p>
+<p align="justify">
+All that is left now is to average the resulting value by dividing by the kernel size. As extras, we have a strength factor that multiplies the effect, and a mist/fog effect that is applied based on camera distance in order to avoid showing occlusion in far areas.
+</p>
+
+<p align="justify">
+<b>3.</b> At this point, we are gonna want to blur the result to remove most of the artifacts caused by the noise pattern.
+</p>
+
+<p align="justify">
+<b>4.</b> Finally, all that remains is to merge the blurred SSAO texture with the scene texture. For better results, I decided to use the luminance coeffiecient to apply the occlusion.
+</p>
+
+<pre><code>vec3 kLum = vec3(0.299, 0.587, 0.114);
+float lum = dot(color.rgb, kLum);
+float lumInfluence = 0.5;
+
+vec3 output = vec3(color * mix(vec3(ssao), vec3(1.0), vec3(lum) * lumInfluence));
+</code></pre>
 
 <h4 id="bloom">Bloom</h4>
 
+<p><img src="https://avilapa.github.io/content/images/2018/may/engine-postprocessing/bloom.png", width="100%"/></p>
+
 <p align="justify">
+Bloom or Glow refers to the effect of extending the borders of the brightest areas of the screen, creating the illusion of an extremely bright and overwhelming light to the camera or eye.
+</p>
+
+<p><small><i>Same image with (left) and without (right) the bloom effect:</i></small>
+<img src="https://avilapa.github.io/content/images/2018/may/engine-postprocessing/bloom_comparison.png", width="100%"/></p>
+
+<h6 id="implementation-1">Implementation</h6>
+
+<p align="justify">
+This implementation is based of this effect is rather simple.
+</p>
+
+<p align="justify">
+<b>1.</b> A first pass defines a color brightness threshold, above which the color is normally rendered to the framebuffer, and below which the color is rendered in black.
+</p>
+
+<p align="justify">
+<b>2.</b> After this, the resulting texture is taken and a <i>Gaussian Blur</i> is performed on top of it in order to create the overwhelming effect.
+</p>
+
+<p align="justify">
+<b>3.</b> Lastly, the resulting blurred texture is added to the scene instead of mixed with it, as light is additive. Also, an intensity factor is provided to play with the effect.
 </p>
 
 <h4 id="god-rays">God Rays</h4>
 
 <p align="justify">
+- Coming soon.
 </p>
 
 <h2 id="references">References</h2>
@@ -356,6 +430,8 @@ This example may seem kind of lame, but it has been core to being able to easily
 <ul>
 <li><a href="http://john-chapman-graphics.blogspot.com.es/2013/01/ssao-tutorial.html" target="_blank">John Chapman SSAO</a></li>
 <li><a href="https://learnopengl.com/Advanced-Lighting/SSAO" target="_blank">LearnOpenGL SSAO</a></li>
+<li><a href="http://fabiensanglard.net/lightScattering/" target="_blank">Ikaruga light scattering</a></li>
+<li><a href="https://www.youtube.com/watch?v=Qk22EpwAJZQ" target="_blank">Thin Matrix god rays</a></li>
 </ul>
 
     </section>
