@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2018</copyright>
-    <lastBuildDate>Sun, 27 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://avilapa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fuel Renegades</title>
+      <link>https://avilapa.github.io/fuel-renegades/</link>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://avilapa.github.io/fuel-renegades/</guid>
+      <description>Blog posts  Framerate independent physics in UE4 How to achieve physics framerate independence in UE4 and how to correctly use substepping. Víctor Ávila</description>
+    </item>
     
     <item>
       <title>Custom Engine: Physically Based Rendering</title>
@@ -39,15 +48,6 @@
       <guid>https://avilapa.github.io/render-engine/</guid>
       <description>The Engine This is an OpenGL and C++ rendering engine I made in my final HND year at ESAT Valencia for the graphics programming subject. Its main features are the following:
  Multithreaded agnostical graphics API Component oriented engine Physically Based Rendering techniques:  Material pipeline (PBS, Metallic/Roughness workflow) Image Based Lighting (Radiance and Irradiance environment mapping) Atmospheric Scattering (Rayleigh and Mie Scattering)  GLTF model loading Postprocessing Pipeline:  Screen Space Ambient Occlusion (SSAO) Bloom Light Scattering (God Rays) Shadow Mapping Fast Approximate Anti-Aliasing (FXAA) Lens Distortion (with Grain, Vignette, Color Aberration) Tonemapping and multiple one-pass filters  Procedural generation of infinite voxel worlds UI integration (ImGui) Sound integration (OpenAL) Physics integration (Bullet Physics)  Blog posts  Custom Engine: Physically Based Rendering The physically based approach used for my custom rendering engine.</description>
-    </item>
-    
-    <item>
-      <title>Fuel Renegades</title>
-      <link>https://avilapa.github.io/fuel-renegades/</link>
-      <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
-      
-      <guid>https://avilapa.github.io/fuel-renegades/</guid>
-      <description>Blog posts  Framerate independent physics in UE4 How to achieve physics framerate independence in UE4 and how to correctly use substepping. Víctor Ávila</description>
     </item>
     
     <item>
