@@ -31,7 +31,7 @@
     
     <meta property="og:description" content="How to achieve physics framerate independence by correctly using UE4 substepping." />
   	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2014-07-11T10:54:24&#43;02:00" />
+    <meta property="article:published_time" content="2018-06-01T00:00:00Z" />
 
     
     <meta property="article:tag" content="fuel-renegades" />
@@ -87,7 +87,7 @@
     "publisher": {
         "@type": "Organization",
         "name": ,
-        "logo": https://avilapa.github.io/images/logo-small.png
+        "logo": https://avilapa.github.io/images/logo-large.png
     },
     "author": {
         "@type": "Person",
@@ -95,7 +95,7 @@
         
         "image": {
             "@type": "ImageObject",
-            "url": https://avilapa.github.io/images/logo-small.png,
+            "url": https://avilapa.github.io/images/logo-large.png,
             "width": 250,
             "height": 250
         }, 
@@ -116,15 +116,15 @@
     },
     "headline": Framerate independent physics in UE4,
     "name": Framerate independent physics in UE4,
-    "wordCount": 1123,
-    "timeRequired": "PT6M",
+    "wordCount": 1728,
+    "timeRequired": "PT9M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
     "url": https://avilapa.github.io/post/framerate-independent-physics-in-ue4/,
-    "datePublished": 2014-07-11T10:54Z,
-    "dateModified": 2014-07-11T10:54Z,
+    "datePublished": 2018-06-01T00:00Z,
+    "dateModified": 2018-06-01T00:00Z,
     
     "image": {
         "@type": "ImageObject",
@@ -189,7 +189,7 @@
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="https://avilapa.github.io/upydk">UPyDK</a>
+            	<a href="https://avilapa.github.io/render-engine">Custom Engine</a>
             </li>
         
         
@@ -213,7 +213,7 @@
 
 
   
-      <a class="blog-logo" href="https://avilapa.github.io/"><img src="https://avilapa.github.io/images/logo-small.png" alt="Home" /></a>
+      <a class="blog-logo" href="https://avilapa.github.io/"><img src="https://avilapa.github.io/images/logo-large.png" alt="Home" /></a>
   
   
       <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
@@ -236,8 +236,8 @@
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2014-07-11T10:54:24&#43;02:00">
-            Jul 11, 2014
+          <time class="post-date" datetime="2018-06-01T00:00:00Z">
+            Jun 1, 2018
           </time>
         
          
@@ -324,6 +324,18 @@ You can enable substepping by ticking <i>Project Settings > Physics > Framerate 
 <p align="justify">
 This delta defines the step time above which the physics engine will need to perform substeps. It will perform as many substeps as needed to reach <i>1 / max-substep-delta-time</i> (1 / 0.008333 = 120fps in this case). The following tables show some practical examples for a better understanding (bear in mind, this is the most important setting when it comes to defining the update loop):
 </p>
+
+<blockquote>
+<blockquote>
+<p><b>FPS:</b> The frames per second at which the app is moving.</p>
+
+<p><b>Substeps per <i>Tick()</i>:</b> The amount of substeps that were performed on a render frame.</p>
+
+<p><b>Substep time:</b> The time in milliseconds that took the each substep.</p>
+
+<p><b>Total:</b> The total time (Substeps per <i>Tick()</i> * Substep time).</p>
+</blockquote>
+</blockquote>
 
 <p><b>Max Substep Delta = <code>1 / 120 (= 0.008333)</code>:</b></p>
 
@@ -461,7 +473,7 @@ This delta defines the step time above which the physics engine will need to per
 </blockquote>
 
 <p align="justify">
-The results of the observation are rather obvious: <b>(1 / max-substep-delta-time) defines the max framerate at which our game should run.</b> Any lower framerates than the desired one will slow down the rendering, but not the physics, while higher framerates than the one defined by max substep delta time will result in an overall speed up to our game. 
+The results of the observation show how <b><i>(1 / max-substep-delta-time)</i> defines the max framerate at which our game should run.</b> Any lower framerates than the desired one will slow down the rendering, but not the physics, while higher framerates than the one defined by max substep delta time will result in an overall speed up to our game. 
 </p>
 
 <p align="justify">
@@ -482,19 +494,109 @@ So you need to set the max substeps to the minimum framerate at which your game 
 
 <h4 id="setting-up-substepping-in-code">Setting up substepping in code</h4>
 
-<p>When it comes to C++, your physics calculations cannot be performed in the <i>Tick()</i> as you used to do.</p>
+<p align="justify">
+Coding time it is! In your C++ classes, <b>physics calculations can no longer be performed in the <i>Tick()</i></b> as they used to do. 
+</p>
 
-<p>You will need to define a <i>SubstepTick()</i>&hellip;. TO BE CONTINUED.</p>
+<p align="justify">
+Lets see an easy example of the <i>template</i> we will need to implement on your <b><i>AActor</i></b> classes using physics. In the header we need to have the following lines of code. We will want to define a <i>PhysicsTick()</i> function as a <i>BlueprintNativeEvent</i>, so that it can be summoned from Blueprints if needed.
+</p>
+
+<pre><code> public:
+  // Event called every physics tick and sub-step.
+  UFUNCTION(BlueprintNativeEvent)
+  void PhysicsTick(float SubstepDeltaTime);
+  virtual void PhysicsTick_Implementation(float SubstepDeltaTime);
+
+  // Custom physics Delegate
+  FCalculateCustomPhysics OnCalculateCustomPhysics;
+  void CustomPhysics(float DeltaTime, FBodyInstance* BodyInstance);
+</code></pre>
+
+<p align="justify">
+Also, we will need to subscribe to the FCalculateCustomPhysics Delegate. You can call it like this inside of the class constructor. Note that we will need to replace <i>AExampleActor</i> for the name of you <i>AActor</i> class!
+</p>
+
+<pre><code>  OnCalculateCustomPhysics.BindUObject(this, &amp;AExampleActor::CustomPhysics);
+</code></pre>
+
+<p align="justify">
+In the actor's <i>Tick()</i> function, we need to actually add the custom physics each frame to the RootComponent body instance. In my case, <i>box_component_</i> is the RootComponent's Body Instance of the actor.
+</p>
+
+<pre><code>  // Add custom physics on RootComponent's BodyInstance
+  if (box_component_-&gt;GetBodyInstance() != NULL) 
+  {
+    box_component_-&gt;GetBodyInstance()-&gt;AddCustomPhysics(OnCalculateCustomPhysics);
+  }
+</code></pre>
+
+<p align="justify">
+Finally, we can declare our <i>PhysicsTick()</i> function (note that it is the <i>_Implementation</i> the one defined!) and call it from our <i>CustomPhysics()</i> function This function will be executed once per substep.
+</p>
+
+<pre><code>  void AHoverVehicle::PhysicsTick_Implementation(float SubstepDeltaTime) 
+  {
+    // Physics calculations go here...
+  }
+
+  void AHoverVehicle::CustomPhysics(float DeltaTime, FBodyInstance* BodyInstance) 
+  {
+    PhysicsTick(DeltaTime);
+  }
+</code></pre>
+
+<blockquote>
+<blockquote>
+<p><b>Note:</b> There is a newer way to handle substepping in UE4 4.15, which i believe it works per scene, rather than for each actor, but I have not tried this yet.</p>
+</blockquote>
+</blockquote>
 
 <h4 id="handling-substep-physics">Handling substep physics</h4>
 
-<p>a</p>
+<p align="justify">
+With this setup, now we need to call all the physics related stuff inside of the <i>CustomPhysics()</i> function in order for them the be executed the proper amount of times. But in order to do this, we have to keep in mind some things:
+</p>
 
-<h3 id="going-further">Going further</h3>
+<h6 id="we-need-to-work-with-bodyinstance">We need to work with BodyInstance</h6>
 
-<h3 id="problems">Problems</h3>
+<p align="justify">
+From now on, all writing and reading of data needs to be done to the BodyInstance of the object we're applying physics to. The reason for this, is that <b>BodyInstance's data stays always up-to-date on physics steps, while the actual component is only updated once per <i>Tick()</i></b>. Here are some examples of using body instance's data:
+</p>
 
-<p>cpu overload, means physics overload (max substep!)</p>
+<pre><code>// Getting the transformation matrix of the object
+FTransform WorldTransform = box_component_-&gt;GetBodyInstance()-&gt;GetUnrealWorldTransform_AssumesLocked();
+
+// World Location
+FVector Location = WorldTransform.GetLocation();
+
+// Getting the forward, right, and up vectors
+FVector Forward = WorldTransform.GetUnitAxis(EAxis::X);
+FVector Right   = WorldTransform.GetUnitAxis(EAxis::Z);
+FVector Up      = WorldTransform.GetUnitAxis(EAxis::Y);
+</code></pre>
+
+<h6 id="forces-need-to-use-substepping">Forces need to use substepping</h6>
+
+<p align="justify">
+Applying forces also needs to be done from the BodyInstance of the component in order for data to be saved.
+</p>
+
+<pre><code>// Adding forces
+box_component_-&gt;GetBodyInstance()-&gt;AddForce(Forward, false);
+box_component_-&gt;GetBodyInstance()-&gt;AddTorque(Right, false, true);
+box_component_-&gt;GetBodyInstance()-&gt;AddForceAtPosition(-Forward, StartPoint, false);
+</code></pre>
+
+<p align="justify">
+Note that there is an extra parameter in each of the functions called <b><i>bAllowSubstepping</i></b>. Contrary to what it suggests, you <b>must set it to <i>false</i> in order for physics to work correctly</b>.
+</p>
+
+<blockquote>
+<blockquote>
+<p><b>Note:</b> As you know, you don&rsquo;t need to multiply physics forces by the Delta Time, as UE4 does that for you.</p>
+</blockquote>
+</blockquote>
 
 <h3 id="why-doesn-t-ue4-use-a-fixed-timestep">Why doesn&rsquo;t UE4 use a fixed timestep?</h3>
 
@@ -516,7 +618,19 @@ In such a case the user will expect the object to move speed * delta time. Howev
 </blockquote>
 </blockquote>
 
-<h5 id="special-thanks">Special Thanks</h5>
+<h5 id="references">References</h5>
+
+<p align="justify">
+So, you managed to achieve physics framerate independence! If you had any problem, do not hesitate to contact me, or try reaching out to the UE4 discord (Unreal Slackers), where <b>0lento</b> helped me find all this out!
+
+The troubles I had when searching information on this matter on the web and the official UE4 docs is what pushed me to do this small write-up about it. However, there are a couple links that helped me understand UE4 timestep and physics better:
+</p>
+
+<ul>
+<li><a href="https://forums.unrealengine.com/community/community-content-tools-and-tutorials/71452-open-source-machinery-modelling-toolkit" target="_blank">MMT Plugin and its source</a></li>
+<li><a href="http://www.aclockworkberry.com/unreal-engine-substepping/" target="_blank">A Clockwork Berry UE4 Substepping blog</a></li>
+<li><a href="https://forums.unrealengine.com/community/community-content-tools-and-tutorials/60077-the-re-inventing-the-wheel-thread/page2?88495-The-Re-Inventing-the-Wheel-Thread=&viewfull=1" target="_blank">The Re-Inventing the Wheel post at unrealengine forums</a></li>
+</ul>
 
     </section>
 
@@ -534,7 +648,7 @@ In such a case the user will expect the object to move speed * delta time. Howev
 
 
 <figure class="author-image">
-    <a class="img" href="https://avilapa.github.io/" style="background-image: url(/images/logo-small.png)"><span class="hidden">Víctor Ávila Parcet's Picture</span></a>
+    <a class="img" href="https://avilapa.github.io/" style="background-image: url(/images/logo-large.png)"><span class="hidden">Víctor Ávila Parcet's Picture</span></a>
 </figure>
 
 
@@ -577,29 +691,6 @@ In such a case the user will expect the object to move speed * delta time. Howev
 
     
 
-<div id="disqus_thread"></div>
-<script>
-
-
-
-
-var disqus_config = function () {
-this.page.url = "https:\/\/avilapa.github.io\/post\/framerate-independent-physics-in-ue4\/";  
-this.page.identifier = "https:\/\/avilapa.github.io\/post\/framerate-independent-physics-in-ue4\/"; 
-};
-
-(function() { 
-var d = document, s = d.createElement('script');
-s.src = 'https://avilapa.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-
 
 
 
@@ -612,13 +703,12 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="https://avilapa.github.io/post/example2/">
+  
+      <a class="read-next-story prev" style="background-image: url(/content/images/2018/may/engine-pbr/pbr.png)" href="https://avilapa.github.io/post/custom-engine-pbr/">
           <section class="post">
-              <h2>Example 2</h2>
-              
+              <h2>Custom Engine: Physically Based Rendering</h2>
           </section>
       </a>
-  
   
 </aside>
 

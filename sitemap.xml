@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://avilapa.github.io/post/framerate-independent-physics-in-ue4/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/fuel-renegades/</loc>
     <lastmod>2018-06-01T00:00:00+00:00</lastmod>
   </url>
@@ -56,6 +61,18 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/framerate/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/fuel-renegades/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/fxaa/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -80,6 +97,12 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/physics/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/postprocessing/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -87,7 +110,7 @@
   
   <url>
     <loc>https://avilapa.github.io/post/</loc>
-    <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,8 +121,20 @@
   </url>
   
   <url>
+    <loc>https://avilapa.github.io/tags/substepping/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://avilapa.github.io/tags/</loc>
     <lastmod>2018-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://avilapa.github.io/tags/ue4/</loc>
+    <lastmod>2018-06-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
