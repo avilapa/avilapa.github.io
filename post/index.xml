@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2018</copyright>
-    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://avilapa.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VXR: New beginnings</title>
+      <link>https://avilapa.github.io/post/vxr-new-beginnings/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://avilapa.github.io/post/vxr-new-beginnings/</guid>
+      <description>Index  New beginnings  Introduction Goals The first weeks!  Up next References  New beginnings Introduction VXR is a project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. It was quickly restated and expanded as the tool on which my Bachelor&#39;s degree personal project would take form during this next year.</description>
+    </item>
     
     <item>
       <title>Framerate independent physics in UE4</title>

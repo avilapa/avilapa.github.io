@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2018</copyright>
-    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://avilapa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VXR: New beginnings</title>
+      <link>https://avilapa.github.io/post/vxr-new-beginnings/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://avilapa.github.io/post/vxr-new-beginnings/</guid>
+      <description>Index  New beginnings  Introduction Goals The first weeks!  Up next References  New beginnings Introduction VXR is a project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. It was quickly restated and expanded as the tool on which my Bachelor&#39;s degree personal project would take form during this next year.</description>
+    </item>
     
     <item>
       <title>Framerate independent physics in UE4</title>
@@ -28,8 +37,7 @@
       
       <guid>https://avilapa.github.io/fuel-renegades/</guid>
       <description>TL;DR: just go play it, its free! https://store.steampowered.com/app/878110/Fuel_Renegades/
-  Fuel Renegades Fuel Renegades is an epic arcade racing game REAL FREE (no DLC, no loot boxes, just fun), where your brain will produce tons of adrenaline because of the awesome race endings. Play up to four players in the same computer enjoying the polished mechanics that gives you a smooth game feel.
-This game was developed during my final HND year by Modular Souls, a small group of programming and art students from ESAT Valencia and some composers from Berklee Valencia.</description>
+  Fuel Renegades Fuel Renegades is an epic arcade racing game REAL FREE (no DLC, no loot boxes, just fun), where your brain will produce tons of adrenaline because of the awesome race endings. Play up to four players in the same computer enjoying the polished mechanics that gives you a smooth game feel. This game was developed during my final HND year by Modular Souls, a small group of programming and art students from ESAT Valencia and some composers from Berklee Valencia.</description>
     </item>
     
     <item>
@@ -57,8 +65,18 @@ This game was developed during my final HND year by Modular Souls, a small group
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
       
       <guid>https://avilapa.github.io/render-engine/</guid>
-      <description>The Engine This is an OpenGL and C++ rendering engine I made in my final HND year at ESAT Valencia for the graphics programming subject. Its main features are the following:
- Multithreaded agnostical graphics API Component oriented engine Physically Based Rendering techniques:  Material pipeline (PBS, Metallic/Roughness workflow) Image Based Lighting (Radiance and Irradiance environment mapping) Atmospheric Scattering (Rayleigh and Mie Scattering)  GLTF model loading Postprocessing Pipeline:  Screen Space Ambient Occlusion (SSAO) Bloom Light Scattering (God Rays) Shadow Mapping Fast Approximate Anti-Aliasing (FXAA) Lens Distortion (with Grain, Vignette, Color Aberration) Tonemapping and multiple one-pass filters  Procedural generation of infinite voxel worlds UI integration (ImGui) Sound integration (OpenAL) Physics integration (Bullet Physics)  Related blog posts  Custom Engine: Physically Based Rendering The physically based approach used for my custom rendering engine.</description>
+      <description>The Engine This is an OpenGL and C++ rendering engine I made in my final HND year at ESAT Valencia for the graphics programming subject. Its main features are the following:  Multithreaded agnostical graphics API Component oriented engine Physically Based Rendering techniques:  Material pipeline (PBS, Metallic/Roughness workflow) Image Based Lighting (Radiance and Irradiance environment mapping) Atmospheric Scattering (Rayleigh and Mie Scattering)  GLTF model loading Postprocessing Pipeline:  Screen Space Ambient Occlusion (SSAO) Bloom Light Scattering (God Rays) Shadow Mapping Fast Approximate Anti-Aliasing (FXAA) Lens Distortion (with Grain, Vignette, Color Aberration) Tonemapping and multiple one-pass filters  Procedural generation of infinite voxel worlds UI integration (ImGui) Sound integration (OpenAL) Physics integration (Bullet Physics)  Related blog posts  Custom Engine: Physically Based Rendering The physically based approach used for my custom rendering engine.</description>
+    </item>
+    
+    <item>
+      <title>VXR Engine</title>
+      <link>https://avilapa.github.io/vxr-engine/</link>
+      <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
+      
+      <guid>https://avilapa.github.io/vxr-engine/</guid>
+      <description> Development blog posts  VXR: New beginnings [01/09/2018] First blog post of the development process of the VXR engine. Víctor Ávila
+ 
+Gallery </description>
     </item>
     
     <item>
