@@ -94,8 +94,8 @@
       <guid>https://avilapa.github.io/portfolio/</guid>
       <description>You can read a little bit about me first!
   Fuel Renegades (UE4 Steam Published Game) Link: https://store.steampowered.com/app/878110/Fuel_Renegades/
-Arcade racing multiplayer (4 players split-screen, up to 8 players online) game with polished mechanics and smooth game feel, built in Unreal Engine 4 and published on Steam.
- Player Vehicle design and implementation: full implementation of vehicle movement mechanics with special emphasis on its feeling and speed. Proper use of UE4 substepping system to achieve solid gameplay performance and framerate independent physics across computers with a wide range of specs.</description>
+Arcade racing multiplayer (4 players split-screen, up to 8 players online) game with polished mechanics and smooth game feel, built in Unreal Engine 4 and published on Steam. My main contributions to the project are:
+ Player Vehicle design and implementation: full implementation of vehicle movement mechanics with special emphasis on its feeling and speed.</description>
     </item>
     
   </channel>
