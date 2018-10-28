@@ -9,37 +9,37 @@
     
         
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="/content/images/2018/sep/vxr-cover.png"/>
+        <meta name="twitter:image" content="/content/images/2018/oct/vxr/planets.png"/>
     
 
 
 
-<meta name="twitter:title" content="VXR Engine"/>
-<meta name="twitter:description" content="Rendering engine for the Bachelor&#39;s degree personal project."/>
+<meta name="twitter:title" content="vxr (Open Source Engine)"/>
+<meta name="twitter:description" content="General purpose engine written in C&#43;&#43; with emphasis on rendering."/>
 <meta name="twitter:site" content="@97torvic"/>
 
 
 
-  	<meta property="og:title" content="VXR Engine &middot; Víctor Ávila" />
+  	<meta property="og:title" content="vxr (Open Source Engine) &middot; Víctor Ávila" />
   	<meta property="og:site_name" content="Víctor Ávila" />
   	<meta property="og:url" content="https://avilapa.github.io/vxr-engine/" />
 
     
-       <meta property="og:image" content="/content/images/2018/sep/vxr-cover.png"/>
+       <meta property="og:image" content="/content/images/2018/oct/vxr/planets.png"/>
     
 
     
-    <meta property="og:description" content="Rendering engine for the Bachelor&#39;s degree personal project." />
+    <meta property="og:description" content="General purpose engine written in C&#43;&#43; with emphasis on rendering." />
   	<meta property="og:type" content="article" />
     <meta property="article:published_time" content="2006-08-30T03:45:00&#43;02:00" />
 
     
     
 
-    <title>VXR Engine &middot; Víctor Ávila</title>
+    <title>vxr (Open Source Engine) &middot; Víctor Ávila</title>
 
     
-    <meta name="description" content="Rendering engine for the Bachelor&#39;s degree personal project." />
+    <meta name="description" content="General purpose engine written in C&#43;&#43; with emphasis on rendering." />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -63,7 +63,7 @@
     
         <link href="http://feeds.feedburner.com/..." rel="alternate" type="application/rss+xml" title="Víctor Ávila" />
     
-    <meta name="generator" content="Hugo 0.49" />
+    <meta name="generator" content="Hugo 0.49.2" />
 
     <link rel="canonical" href="https://avilapa.github.io/vxr-engine/" />
 
@@ -101,12 +101,12 @@
              
             
         ],
-        "description": Videogames programming student and enthusiast
+        "description": Videogames programming student and computer graphics enthusiast
         
     },
-    "headline": VXR Engine,
-    "name": VXR Engine,
-    "wordCount": 21,
+    "headline": vxr (Open Source Engine),
+    "name": vxr (Open Source Engine),
+    "wordCount": 134,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -118,13 +118,13 @@
     
     "image": {
         "@type": "ImageObject",
-        "url": https://avilapa.github.io//content/images/2018/sep/vxr-cover.png,
+        "url": https://avilapa.github.io//content/images/2018/oct/vxr/planets.png,
         "width": 3000,
         "height": 1445
     },
     
     
-    "description": Rendering engine for the Bachelor&#39;s degree personal project.,
+    "description": General purpose engine written in C&#43;&#43; with emphasis on rendering.,
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": https://avilapa.github.io/vxr-engine/
@@ -164,17 +164,22 @@
         
             <h3>avilapa</h3>
             <li class="nav-opened" role="presentation">
-            	<a href="https://avilapa.github.io/">Blog</a>
+            	<a href="https://avilapa.github.io/about">About Me</a>
             </li>
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="https://avilapa.github.io/about/">About me</a>
+            	<a href="https://avilapa.github.io/portfolio">Portfolio</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/">Blog</a>
             </li>
         
             <h3>Projects</h3>
             <li class="nav-opened" role="presentation">
-            	<a href="https://avilapa.github.io/vxr-engine">VXR Engine</a>
+            	<a href="https://avilapa.github.io/vxr-engine">vxr Engine</a>
             </li>
         
             
@@ -203,7 +208,7 @@
 
 
   
-  <header class="main-header post-head" style="background-image: url(/content/images/2018/sep/vxr-cover.png)">
+  <header class="main-header post-head" style="background-image: url(/content/images/2018/oct/vxr/planets.png)">
   
   <nav class="main-nav overlay clearfix">
 
@@ -219,10 +224,10 @@
 
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">VXR Engine</h1>
+            <h1 class="page-title">vxr (Open Source Engine)</h1>
             <h2 class="page-description">
                 
-                    Rendering engine for the Bachelor&#39;s degree personal project.
+                    General purpose engine written in C&#43;&#43; with emphasis on rendering.
                 
             </h2>
         </div>
@@ -253,12 +258,32 @@
 
 
 
+<p><img src="https://avilapa.github.io/content/images/2018/oct/vxr/logo_text.png/", width="100%"/></p>
+
+<h3 id="the-engine">The Engine</h3>
+
+<p align="justify">
+<b>vxr</b> is an open source project that emerged from the desire to build a <b>general purpose rendering tool</b> that I could use to implement anything I was curious about or wanted to learn about.
+</p>
+<p align="justify">
+As it stands now, it is a <b>multithreaded 3D game development engine written in C++</b> and oriented to support different rendering backends. The engine has two different APIs for development:
+</p>
+</p>
+
+<ul>
+<li>A <b>lower level API</b> based on render display list commands that can be used to build <b>small but efficient</b> applications.</li>
+<li>A <b>higher level API</b> built on top of the lower level one, which abstracts it to provide a <b>rendering agnostic and component oriented</b> API.
+<br /></li>
+</ul>
+
+<p><b>Github page: <a href="https://avilapa.github.io/vxr-engine/">https://avilapa.github.io/vxr-engine/</a></b></p>
+
 <h3 id="development-blog-posts">Development blog posts</h3>
 
 <blockquote>
-<h3 id="vxr-new-beginnings-1"><a href="https://avilapa.github.io/post/vxr-new-beginnings/">VXR: New beginnings</a></h3>
+<h3 id="vxr-new-beginnings-1"><a href="https://avilapa.github.io/post/vxr-new-beginnings/">vxr: New beginnings</a></h3>
 
-<p><strong>[01/09/2018]</strong> First blog post of the development process of the VXR engine.
+<p><strong>[01/09/2018]</strong> First blog post of the development process of the vxr engine.
   <br><small><b>Víctor Ávila</b></small></p>
 </blockquote>
 
@@ -268,12 +293,17 @@
 
 <h3 id="gallery">Gallery</h3>
 
-<p><img src="https://avilapa.github.io/content/images/2018/sep/vxr/new_beginnings/instancing.gif", width="100%"/></p>
+<p><img src="https://avilapa.github.io/content/images/2018/oct/vxr/planets.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/vxr/06-PlanetEditor.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/vxr/04-Mesh.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/sep/vxr/new_beginnings/instancing.gif", width="100%"/></p>
 
 
 
 
 <nav class="navpage">
+
+
 
 
 
@@ -320,7 +350,7 @@
 <section class="author">
   <h4><a href="https://avilapa.github.io/">Víctor Ávila Parcet</a></h4>
   
-  <p>Videogames programming student and enthusiast</p>
+  <p>Videogames programming student and computer graphics enthusiast</p>
   
   <div class="author-meta">
     <span class="author-location icon-location">Valencia, Spain</span>
@@ -334,7 +364,7 @@
     
 <section class="share">
   <h4>Share this page</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=VXR%20Engine&nbsp;-&nbsp;V%c3%adctor%20%c3%81vila&amp;url=https%3a%2f%2favilapa.github.io%2fvxr-engine%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=vxr%20%28Open%20Source%20Engine%29&nbsp;-&nbsp;V%c3%adctor%20%c3%81vila&amp;url=https%3a%2f%2favilapa.github.io%2fvxr-engine%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -342,7 +372,7 @@
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2favilapa.github.io%2fvxr-engine%2f&amp;description=VXR%20Engine"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2favilapa.github.io%2fvxr-engine%2f&amp;description=vxr%20%28Open%20Source%20Engine%29"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>

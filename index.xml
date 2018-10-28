@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>VXR: New beginnings</title>
+      <title>vxr: New beginnings</title>
       <link>https://avilapa.github.io/post/vxr-new-beginnings/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://avilapa.github.io/post/vxr-new-beginnings/</guid>
-      <description>Index  New beginnings  Introduction Goals The first weeks!  Up next References  New beginnings Introduction VXR is a project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. It was quickly restated and expanded as the tool on which my Bachelor&#39;s degree personal project would take form during this next year.</description>
+      <description>Index  New beginnings  Introduction Goals The first weeks!  Up next References  New beginnings Introduction vxr is a project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. It was quickly restated and expanded as the tool on which the idea for my Bachelor&#39;s degree final year project would take form during this next year.</description>
     </item>
     
     <item>
@@ -69,14 +69,12 @@
     </item>
     
     <item>
-      <title>VXR Engine</title>
+      <title>vxr (Open Source Engine)</title>
       <link>https://avilapa.github.io/vxr-engine/</link>
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
       
       <guid>https://avilapa.github.io/vxr-engine/</guid>
-      <description> Development blog posts  VXR: New beginnings [01/09/2018] First blog post of the development process of the VXR engine. Víctor Ávila
- 
-Gallery </description>
+      <description>The Engine vxr is an open source project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. As it stands now, it is a multithreaded 3D game development engine written in C++ and oriented to support different rendering backends. The engine has two different APIs for development:  A lower level API based on render display list commands that can be used to build small but efficient applications.</description>
     </item>
     
     <item>
@@ -85,7 +83,19 @@ Gallery </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://avilapa.github.io/about/</guid>
-      <description>I am a videogames programming student who just obtained an HND in ESAT Valencia, and is currently developing Fuel Renegades, an Unreal Engine 4 racing multiplayer game with a small student team, Modular Souls. I am very interested in graphics programming, so at the moment I am also building a small real-time engine in C++ and OpenGL named UPyDK. I have plans of obtaining my bachelor degree next year in Sheffield Hallam University.</description>
+      <description>I am a final year games development student (programmer) in Sheffield Hallam University. I am a very enthusiastic and motivated person, looking forward to begin my career in the industry and to provide my team with proactivity and creativity. I have worked in one published title in PC while in college, and I am currently working on a second one for the PS4 (both in Unreal Engine 4). Also when I got the chance I participated in Game Jams using Unity 3D.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>https://avilapa.github.io/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://avilapa.github.io/portfolio/</guid>
+      <description>You can read a little bit about me first!
+  Fuel Renegades (UE4 Steam Published Game) Link: https://store.steampowered.com/app/878110/Fuel_Renegades/
+Arcade racing multiplayer (4 players split-screen, up to 8 players online) game with polished mechanics and smooth game feel, built in Unreal Engine 4 and published on Steam.
+ Player Vehicle design and implementation: full implementation of vehicle movement mechanics with special emphasis on its feeling and speed. Proper use of UE4 substepping system to achieve solid gameplay performance and framerate independent physics across computers with a wide range of specs.</description>
     </item>
     
   </channel>
