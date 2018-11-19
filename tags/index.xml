@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>Bloom</title>
-      <link>https://avilapa.github.io/tags/bloom/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/bloom/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>C&#43;&#43;</title>
       <link>https://avilapa.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
@@ -49,15 +40,6 @@
     </item>
     
     <item>
-      <title>Engine</title>
-      <link>https://avilapa.github.io/tags/engine/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/engine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Framerate</title>
       <link>https://avilapa.github.io/tags/framerate/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
@@ -72,24 +54,6 @@
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://avilapa.github.io/tags/fuel-renegades/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fxaa</title>
-      <link>https://avilapa.github.io/tags/fxaa/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/fxaa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lens Distortion</title>
-      <link>https://avilapa.github.io/tags/lens-distortion/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/lens-distortion/</guid>
       <description></description>
     </item>
     
@@ -121,24 +85,6 @@
     </item>
     
     <item>
-      <title>Postprocessing</title>
-      <link>https://avilapa.github.io/tags/postprocessing/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/postprocessing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ssao</title>
-      <link>https://avilapa.github.io/tags/ssao/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/ssao/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Substepping</title>
       <link>https://avilapa.github.io/tags/substepping/</link>
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
@@ -153,15 +99,6 @@
       <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://avilapa.github.io/tags/ue4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vxr</title>
-      <link>https://avilapa.github.io/tags/vxr/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/tags/vxr/</guid>
       <description></description>
     </item>
     

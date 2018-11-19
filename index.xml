@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2018</copyright>
-    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://avilapa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>vxr: New beginnings</title>
-      <link>https://avilapa.github.io/post/vxr-new-beginnings/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/post/vxr-new-beginnings/</guid>
-      <description>Index  New beginnings  Introduction Goals The first weeks!  Up next References  New beginnings Introduction vxr is a project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. It was quickly restated and expanded as the tool on which the idea for my Bachelor&#39;s degree final year project would take form during this next year.</description>
-    </item>
     
     <item>
       <title>Framerate independent physics in UE4</title>
@@ -50,16 +41,6 @@
     </item>
     
     <item>
-      <title>Custom Engine: Postprocessing</title>
-      <link>https://avilapa.github.io/post/custom-engine-postprocessing/</link>
-      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://avilapa.github.io/post/custom-engine-postprocessing/</guid>
-      <description>Index  Postprocessing Pipeline Postprocessing Effects  SSAO Bloom God Rays  References  Postprocessing Pipeline The goal of the pipeline was to make an API that is really easy to use for the users, and that requieres as little graphics knowledge as possible. The result, is as simple as the following: ref_ptr&amp;lt;Composer&amp;gt; cam_composer = Engine::ref().scene()-&amp;gt;camera()-&amp;gt;composer(); cam_composer-&amp;gt;set_shadow_mapping_enabled(true); cam_composer-&amp;gt;addPostprocessSSAO()-&amp;gt;addPostprocessBloom()-&amp;gt;addPostprocessFXAA();  This API makes some assumptions:
- The user will not create new postprocessing effects, they will just be able to compose the scene and tweak each render passes parameters.</description>
-    </item>
-    
-    <item>
       <title>Custom OpenGL C&#43;&#43; Engine</title>
       <link>https://avilapa.github.io/render-engine/</link>
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
@@ -69,12 +50,21 @@
     </item>
     
     <item>
-      <title>vxr (Open Source Engine)</title>
+      <title>vxr Engine (Open Source)</title>
       <link>https://avilapa.github.io/vxr-engine/</link>
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
       
       <guid>https://avilapa.github.io/vxr-engine/</guid>
       <description>The Engine vxr is an open source project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. As it stands now, it is a multithreaded 3D game development engine written in C++ and oriented to support different rendering backends. The engine has two different APIs for development:  A lower level API based on render display list commands that can be used to build small but efficient applications.</description>
+    </item>
+    
+    <item>
+      <title>vxt Raytracer (Open Source)</title>
+      <link>https://avilapa.github.io/vxt-raytracer/</link>
+      <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
+      
+      <guid>https://avilapa.github.io/vxt-raytracer/</guid>
+      <description>The Raytracer vxt is a CPU based multithreaded path tracing renderer written in C++, based on the book Ray Tracing the Next Week by Peter Shirley. The purpose of this project is purely academic as this is my first contact with path tracing techniques! So far so fun :^) Features  Multithreaded Tiled Rendering in CPU. Creation of Image Previews in the process. Objects: Sphere, Box, Axis Aligned Plane, Volume, AABB (all capable of being Translated and Rotated).</description>
     </item>
     
     <item>

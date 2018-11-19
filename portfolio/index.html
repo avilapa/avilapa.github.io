@@ -65,7 +65,7 @@ Arcade rac" />
     
         <link href="http://feeds.feedburner.com/..." rel="alternate" type="application/rss+xml" title="Víctor Ávila" />
     
-    <meta name="generator" content="Hugo 0.49.2" />
+    <meta name="generator" content="Hugo 0.51" />
 
     <link rel="canonical" href="https://avilapa.github.io/portfolio/" />
 
@@ -108,8 +108,8 @@ Arcade rac" />
     },
     "headline": Portfolio,
     "name": Portfolio,
-    "wordCount": 562,
-    "timeRequired": "PT3M",
+    "wordCount": 655,
+    "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -176,15 +176,15 @@ Arcade rac" />
         
             
             <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/resume/resume.pdf">Resume</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
             	<a href="https://avilapa.github.io/">Blog</a>
             </li>
         
             <h3>Projects</h3>
-            <li class="nav-opened" role="presentation">
-            	<a href="https://avilapa.github.io/vxr-engine">vxr Engine</a>
-            </li>
-        
-            
             <li class="nav-opened" role="presentation">
             	<a href="https://avilapa.github.io/fuel-renegades">Fuel Renegades</a>
             </li>
@@ -192,6 +192,16 @@ Arcade rac" />
             
             <li class="nav-opened" role="presentation">
             	<a href="https://avilapa.github.io/render-engine">Custom Engine</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/vxt-raytracer">vxt Raytracer</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://avilapa.github.io/vxr-engine">vxr Engine</a>
             </li>
         
         
@@ -315,7 +325,31 @@ Arcade rac" />
 </font>
 <hr></p>
 
-<h4 id="a-href-vxr-engine-target-blank-vxr-open-source-engine-a"><a href="https://avilapa.github.io/vxr-engine/" target="_blank">VXR (Open Source Engine)</a></h4>
+<h4 id="a-href-vxt-raytracer-target-blank-vxt-raytracer-open-source-a"><a href="https://avilapa.github.io/vxt-raytracer/" target="_blank">vxt Raytracer (Open Source)</a></h4>
+
+<p><font size="2">
+<p align="justify" style="line-height:1.4">
+<b>Link:</b> <a href="https://github.com/avilapa/vxt">https://github.com/avilapa/vxt</a></p>
+
+<p>First contact with ray tracing and offline rendering techniques in C++. Multithreaded CPU
+based path tracer built from scratch.</p>
+
+<ul>
+<li>Multithreaded Tiled Rendering in CPU.</li>
+<li>Creation of Image Previews in the process.</li>
+<li>Objects: Sphere, Box, Axis Aligned Plane, Volume, AABB (all capable of being Translated and Rotated).</li>
+<li>Bounding Volume Hierarchy Acceleration Structure.</li>
+<li>Materials: Lambertian, Metal, Glass, Isotropic (Fog/Smoke), Diffuse Light.</li>
+<li>Textures (used in all materials): Image Based, Noise, Custom.</li>
+<li>Realistic Camera: Depth of Field, Motion Blur.</li>
+</ul>
+
+<p><img src="https://avilapa.github.io/content/images/2018/nov/vxt/raytracing_collage.jpg", width="100%"/>
+</p>
+</font>
+<hr></p>
+
+<h4 id="a-href-vxr-engine-target-blank-vxr-engine-open-source-a"><a href="https://avilapa.github.io/vxr-engine/" target="_blank">vxr Engine (Open Source)</a></h4>
 
 <p><font size="2">
 <p align="justify" style="line-height:1.4">
@@ -351,80 +385,80 @@ As it stands now, it is a <b>multithreaded 3D engine written in C++</b> and orie
 </font>
 <hr></p>
 
-<h4 id="multi-agent-system-and-a-pathfinding">Multi-Agent System and A* Pathfinding</h4>
+<!--
+#### Multi-Agent System and A* Pathfinding
 
-<p><font size="2">
-<p align="justify" style="line-height:1.4"></p>
+<font size="2">
+<p align="justify" style="line-height:1.4">
 
-<p>Project for the Artificial Intelligence subject in my final HND year. It consisted in implementing several agents each with its specific behaviour to simulate a prison.</p>
+Project for the Artificial Intelligence subject in my final HND year. It consisted in implementing several agents each with its specific behaviour to simulate a prison. 
 
-<ul>
-<li><b>A* Pathfinding</b> agent used to communicate with the agents and provide them with requested paths.</li>
-<li>Prisoner, Soldier and Guard agents with using <b>FSM</b> for their movement and behaviour (mind - body).</li>
-<li>Prison agent used to communicate with the agents.</li>
-<li>Multi-Agent messaging.</li>
-<li><b>Fixed timestep</b>.</li>
-</ul>
+- <b>A* Pathfinding</b> agent used to communicate with the agents and provide them with requested paths.
+- Prisoner, Soldier and Guard agents with using <b>FSM</b> for their movement and behaviour (mind - body). 
+- Prison agent used to communicate with the agents.
+- Multi-Agent messaging.
+- <b>Fixed timestep</b>.
 
-<p><img src="https://avilapa.github.io/content/images/2018/oct/portfolio/prison.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/portfolio/prison.png", width="100%"/>
 </p>
 </font>
-<hr></p>
+<hr>
 
-<h4 id="procedural-city-graphics-framework">Procedural City (Graphics Framework)</h4>
+#### Procedural City (Graphics Framework)
 
-<p><font size="2">
-<p align="justify" style="line-height:1.4"></p>
+<font size="2">
+<p align="justify" style="line-height:1.4">
 
-<p>First contact with graphcis for the graphics programming subject in my second year. The project consisted on learning OpenGL by implementing Texture, Framebuffer, Material and Buffer objects in a C++ OpenGL framework, and testing them by building a procedural city.</p>
+First contact with graphcis for the graphics programming subject in my second year. The project consisted on learning OpenGL by implementing Texture, Framebuffer, Material and Buffer objects in a C++ OpenGL framework, and testing them by building a procedural city.
 
-<ul>
-<li>Exploration of procedural generation algorithms.</li>
-<li><b>Screen Space Ambient Occlusion</b> postprocess.</li>
-<li><b>Deferred Rendering</b>.</li>
-</ul>
+- Exploration of procedural generation algorithms.
+- <b>Screen Space Ambient Occlusion</b> postprocess.
+- <b>Deferred Rendering</b>. 
 
-<p><img src="https://avilapa.github.io/content/images/2018/oct/portfolio/city.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/portfolio/city.png", width="100%"/>
 </p>
 </font>
-<hr></p>
+<hr>
 
-<h4 id="star-castle">Star Castle</h4>
+#### Star Castle
 
-<p><font size="2">
-<p align="justify" style="line-height:1.4"></p>
+<font size="2">
+<p align="justify" style="line-height:1.4">
 
-<p>Implementation of the classic arcade game Star Castle in a small university rendering framework done in the first year.</p>
+Implementation of the classic arcade game Star Castle in a small university rendering framework done in the first year.
 
-<ul>
-<li>No sprites used in gameplay, all vector and matrix rendering.</li>
-<li>Collision system.</li>
-<li>Progression system with unlockable levels and progressive difficulty.</li>
-<li>Login system and management on a separate application.</li>
-<li>High scores.</li>
-</ul>
+- No sprites used in gameplay, all vector and matrix rendering.
+- Collision system.
+- Progression system with unlockable levels and progressive difficulty.
+- Login system and management on a separate application.
+- High scores.
 
-<p><img src="https://avilapa.github.io/content/images/2018/oct/portfolio/star_castle.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/portfolio/star_castle.png", width="100%"/>
 </p>
 </font>
-<hr></p>
+<hr>
 
-<h4 id="game-jams">Game Jams</h4>
+#### Game Jams
 
-<p><font size="2">
-<p align="justify" style="line-height:1.4"></p>
+<font size="2">
+<p align="justify" style="line-height:1.4">
 
-<p>I have participated in several Game Jams in Ludum Dare, and privately organized ones. In all of them I used <b>Unity 3D</b>. Most of them were group based.</p>
+I have participated in several Game Jams in Ludum Dare, and privately organized ones. In all of them I used <b>Unity 3D</b>. Most of them were group based.
 
-<p><img src="https://avilapa.github.io/content/images/2018/oct/portfolio/game_jams.png", width="100%"/>
+<img src="https://avilapa.github.io/content/images/2018/oct/portfolio/game_jams.png", width="100%"/>
 </p>
 </font>
-<hr></p>
+<hr>
+-->
 
 
 
 
 <nav class="navpage">
+
+
+
+
 
 
 
