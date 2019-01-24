@@ -55,7 +55,8 @@
       <pubDate>Wed, 30 Aug 2006 03:45:00 +0200</pubDate>
       
       <guid>https://avilapa.github.io/vxr-engine/</guid>
-      <description>The Engine vxr is an open source project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. As it stands now, it is a multithreaded 3D game development engine written in C++ and oriented to support different rendering backends. The engine has two different APIs for development:  A lower level API based on render display list commands that can be used to build small but efficient applications.</description>
+      <description> The Engine vxr is an open source project that emerged from the desire to build a general purpose rendering tool that I could use to implement anything I was curious about or wanted to learn about. Github page: https://github.com/avilapa/vxr
+### [vxr: New beginnings][1]  __[01/09/2018]__ First blog post of the development process of the vxr engine.  Víctor Ávila \ --- Gallery </description>
     </item>
     
     <item>
@@ -83,9 +84,11 @@
       
       <guid>https://avilapa.github.io/portfolio/</guid>
       <description>You can read a little bit about me first!
-  Fuel Renegades (UE4 Steam Published Game) Link: https://store.steampowered.com/app/878110/Fuel_Renegades/
-Arcade racing multiplayer (4 players split-screen, up to 8 players online) game with polished mechanics and smooth game feel, built in Unreal Engine 4 and published on Steam. My main contributions to the project are:
- Player Vehicle design and implementation: full implementation of vehicle movement mechanics with special emphasis on its feeling and speed.</description>
+   .item-wrapper { width:33%; float: left; } .item { text-align: center; margin:20px; } .desc { text-align: left!important; } .clear { clear: both; }   Fuel Renegades Description: Published PC Racing Multiplayer Game (Steam) (Video)
+Tech: UE4, C++
+   PBR Game Engine Description: Component Based, Multithreaded... (Video)
+Tech: C++, OpenGL
+   vxr Rendering Engine Description: Open Source (GitHub) PBR Engine + Final Year Project</description>
     </item>
     
   </channel>
